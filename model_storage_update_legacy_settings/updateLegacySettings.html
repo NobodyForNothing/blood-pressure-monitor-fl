@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the updateLegacySettings function from the update_legacy_settings library, for the Dart programming language.">
+  <title>updateLegacySettings function - update_legacy_settings library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">blood_pressure_app</a></li>
+    <li><a href="../model_storage_update_legacy_settings/model_storage_update_legacy_settings-library.html">update_legacy_settings</a></li>
+    <li class="self-crumb">updateLegacySettings function</li>
+  </ol>
+  <div class="self-name">updateLegacySettings</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="model_storage_update_legacy_settings&#47;model_storage_update_legacy_settings-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">updateLegacySettings</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+<span class="name ">updateLegacySettings</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="updateLegacySettings-param-settings"><span class="type-annotation"><a href="../model_storage_settings_store/Settings-class.html">Settings</a></span> <span class="parameter-name">settings</span>, </span></li>
+<li><span class="parameter" id="updateLegacySettings-param-exportSettings"><span class="type-annotation"><a href="../model_storage_export_settings_store/ExportSettings-class.html">ExportSettings</a></span> <span class="parameter-name">exportSettings</span>, </span></li>
+<li><span class="parameter" id="updateLegacySettings-param-csvExportSettings"><span class="type-annotation"><a href="../model_storage_export_csv_settings_store/CsvExportSettings-class.html">CsvExportSettings</a></span> <span class="parameter-name">csvExportSettings</span>, </span></li>
+<li><span class="parameter" id="updateLegacySettings-param-pdfExportSettings"><span class="type-annotation"><a href="../model_storage_export_pdf_settings_store/PdfExportSettings-class.html">PdfExportSettings</a></span> <span class="parameter-name">pdfExportSettings</span>, </span></li>
+<li><span class="parameter" id="updateLegacySettings-param-intervallStoreManager"><span class="type-annotation"><a href="../model_storage_intervall_store/IntervallStoreManager-class.html">IntervallStoreManager</a></span> <span class="parameter-name">intervallStoreManager</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Function for upgrading shared preferences from pre 1.5.5 versions.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; updateLegacySettings(Settings settings, ExportSettings exportSettings, CsvExportSettings csvExportSettings,
+    PdfExportSettings pdfExportSettings, IntervallStoreManager intervallStoreManager) async {
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+
+  List&lt;Future&gt; futures = [];
+
+  final keys = sharedPreferences.getKeys();
+  for (final key in keys) { &#47;&#47; remove these first
+    switch (key) {
+      case &#39;age&#39;:
+        final age = sharedPreferences.getInt(&#39;age&#39;) ?? 30;
+        settings.sysWarn = BloodPressureWarnValues.getUpperSysWarnValue(age);
+        settings.diaWarn = BloodPressureWarnValues.getUpperDiaWarnValue(age);
+        await sharedPreferences.remove(key);
+        break;
+      case &#39;overrideWarnValues&#39;:
+      case &#39;exportLimitDataRange&#39;:
+      case &#39;exportDataRangeStartEpochMs&#39;:
+      case &#39;exportDataRangeEndEpochMs&#39;:
+      case &#39;exportAddableItems&#39;:
+      case &#39;iconSize&#39;:
+      case &#39;titlesCount&#39;:
+        await sharedPreferences.remove(key);
+        break;
+      case &#39;exportCustomEntries&#39;:
+        csvExportSettings.exportFieldsConfiguration.activePreset =
+          sharedPreferences.getBool(key)! ? ExportImportPreset.none : ExportImportPreset.bloodPressureApp;
+        await sharedPreferences.remove(key);
+        break;
+      case &#39;exportItems&#39;:
+        &#47;&#47; can&#39;t be migrated as internalIdentifier changed
+        await sharedPreferences.remove(key);
+        break;
+      case &#39;darkMode&#39;:
+        settings.themeMode = sharedPreferences.getBool(key)! ? ThemeMode.dark : ThemeMode.light;
+        await sharedPreferences.remove(key);
+        break;
+    }
+  }
+  for (final key in keys) {
+    switch (key) {
+      case &#39;graphStepSize&#39;:
+        intervallStoreManager.mainPage.changeStepSize(TimeStep.deserialize(sharedPreferences.getInt(key)!));
+        intervallStoreManager.statsPage.changeStepSize(TimeStep.deserialize(sharedPreferences.getInt(key)!));
+        intervallStoreManager.exportPage.changeStepSize(TimeStep.deserialize(sharedPreferences.getInt(key)!));
+        break;
+      case &#39;followSystemDarkMode&#39;:
+        if (sharedPreferences.getBool(key)!) settings.themeMode = ThemeMode.system;
+        break;
+      case &#39;accentColor&#39;:
+        settings.accentColor = ConvertUtil.parseColor(sharedPreferences.getInt(key)!)!;
+        break;
+      case &#39;diaColor&#39;:
+        settings.diaColor = ConvertUtil.parseColor(sharedPreferences.getInt(key)!)!;
+        break;
+      case &#39;sysColor&#39;:
+        settings.sysColor = ConvertUtil.parseColor(sharedPreferences.getInt(key)!)!;
+        break;
+      case &#39;pulColor&#39;:
+        settings.pulColor = ConvertUtil.parseColor(sharedPreferences.getInt(key)!)!;
+        break;
+      case &#39;allowManualTimeInput&#39;:
+        settings.allowManualTimeInput = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;dateFormatString&#39;:
+        settings.dateFormatString = sharedPreferences.getString(key)!;
+        break;
+      case &#39;sysWarn&#39;:
+        settings.sysWarn = sharedPreferences.getInt(key)!;
+        break;
+      case &#39;diaWarn&#39;:
+        settings.diaWarn = sharedPreferences.getInt(key)!;
+        break;
+      case &#39;validateInputs&#39;:
+        settings.validateInputs = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;allowMissingValues&#39;:
+        settings.allowMissingValues = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;graphLineThickness&#39;:
+        settings.graphLineThickness = sharedPreferences.getDouble(key)!;
+        break;
+      case &#39;animationSpeed&#39;:
+        settings.animationSpeed = sharedPreferences.getInt(key)!;
+        break;
+      case &#39;confirmDeletion&#39;:
+        settings.confirmDeletion = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;exportFormat&#39;:
+        exportSettings.exportFormat = ExportFormat.deserialize(sharedPreferences.getInt(key)!);
+        break;
+      case &#39;csvFieldDelimiter&#39;:
+        csvExportSettings.fieldDelimiter = sharedPreferences.getString(key)!;
+        break;
+      case &#39;csvTextDelimiter&#39;:
+        csvExportSettings.textDelimiter = sharedPreferences.getString(key)!;
+        break;
+      case &#39;exportMimeType&#39;:
+        break;
+      case &#39;exportCustomEntriesCsv&#39;:
+        csvExportSettings.exportFieldsConfiguration.activePreset =
+          sharedPreferences.getBool(key)! ? ExportImportPreset.none : ExportImportPreset.bloodPressureApp;
+        break;
+      case &#39;exportItemsCsv&#39;:
+        &#47;&#47; can&#39;t be migrated as internalIdentifier changed
+        break;
+      case &#39;exportCsvHeadline&#39;:
+        csvExportSettings.exportHeadline = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;defaultExportDir&#39;:
+        exportSettings.defaultExportDir = sharedPreferences.getString(key)!;
+        break;
+      case &#39;exportAfterEveryEntry&#39;:
+        exportSettings.exportAfterEveryEntry = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;language&#39;:
+        final value = sharedPreferences.getString(key);
+        if (value?.isEmpty ?? true) {
+          settings.language = null;
+        } else {
+          settings.language = Locale(value!);
+        }
+        break;
+      case &#39;drawRegressionLines&#39;:
+        settings.drawRegressionLines = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;exportPdfHeaderHeight&#39;:
+        pdfExportSettings.headerHeight = sharedPreferences.getDouble(key)!;
+        break;
+      case &#39;exportPdfCellHeight&#39;:
+        pdfExportSettings.cellHeight = sharedPreferences.getDouble(key)!;
+        break;
+      case &#39;exportPdfHeaderFontSize&#39;:
+        pdfExportSettings.headerFontSize = sharedPreferences.getDouble(key)!;
+        break;
+      case &#39;exportPdfCellFontSize&#39;:
+        pdfExportSettings.cellFontSize = sharedPreferences.getDouble(key)!;
+        break;
+      case &#39;exportPdfExportTitle&#39;:
+        pdfExportSettings.exportTitle = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;exportPdfExportStatistics&#39;:
+        pdfExportSettings.exportStatistics = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;exportPdfExportData&#39;:
+        pdfExportSettings.exportData = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;startWithAddMeasurementPage&#39;:
+        settings.startWithAddMeasurementPage = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;exportCustomEntriesPdf&#39;:
+        pdfExportSettings.exportFieldsConfiguration.activePreset =
+            sharedPreferences.getBool(key)!
+              ? ExportImportPreset.none : ExportImportPreset.bloodPressureApp;
+        break;
+      case &#39;exportItemsPdf&#39;:
+        &#47;&#47; can&#39;t be migrated as internalIdentifier changed
+        break;
+      case &#39;horizontalGraphLines&#39;:
+        settings.horizontalGraphLines = sharedPreferences.getStringList(key)!.map((e) =&gt;
+            HorizontalGraphLine.fromJson(jsonDecode(e))).toList();
+        break;
+      case &#39;useLegacyList&#39;:
+        settings.useLegacyList = sharedPreferences.getBool(key)!;
+        break;
+      case &#39;lastAppVersion&#39;:
+        break;
+      default:
+        assert(false, &#39;Unexpected property saved: $key with value ${sharedPreferences.get(key)}&#39;);
+        break;
+    }
+    futures.add(sharedPreferences.remove(key));
+  }
+  for (final f in futures) {
+    await f;
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">blood_pressure_app</a></li>
+    <li><a href="../model_storage_update_legacy_settings/model_storage_update_legacy_settings-library.html">update_legacy_settings</a></li>
+    <li class="self-crumb">updateLegacySettings function</li>
+</ol>
+
+
+    <h5>update_legacy_settings library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    blood_pressure_app
+      1.5.8
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

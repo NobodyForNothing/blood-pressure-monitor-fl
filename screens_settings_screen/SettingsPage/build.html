@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the build method from the SettingsPage class, for the Dart programming language.">
+  <title>build method - SettingsPage class - settings_screen library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">blood_pressure_app</a></li>
+    <li><a href="../../screens_settings_screen/screens_settings_screen-library.html">settings_screen</a></li>
+    <li><a href="../../screens_settings_screen/SettingsPage-class.html">SettingsPage</a></li>
+    <li class="self-crumb">build method</li>
+  </ol>
+  <div class="self-name">build</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="screens_settings_screen&#47;SettingsPage-class-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-method">build</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+<span class="name ">build</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Describes the part of the user interface represented by this widget.</p>
+<p>The framework calls this method when this widget is inserted into the tree
+in a given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> and when the dependencies of this widget change
+(e.g., an <a href="https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html">InheritedWidget</a> referenced by this widget changes). This
+method can potentially be called in every frame and should not have any side
+effects beyond building a widget.</p>
+<p>The framework replaces the subtree below this widget with the widget
+returned by this method, either by updating the existing subtree or by
+removing the subtree and inflating a new subtree, depending on whether the
+widget returned by this method can update the root of the existing
+subtree, as determined by calling <a href="https://api.flutter.dev/flutter/widgets/Widget/canUpdate.html">Widget.canUpdate</a>.</p>
+<p>Typically implementations return a newly created constellation of widgets
+that are configured with information from this widget's constructor and
+from the given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a>.</p>
+<p>The given <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> contains information about the location in the
+tree at which this widget is being built. For example, the context
+provides the set of inherited widgets for this location in the tree. A
+given widget might be built with multiple different <a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a>
+arguments over time if the widget is moved around the tree or if the
+widget is inserted into the tree in multiple places at once.</p>
+<p>The implementation of this method must only depend on:</p>
+<ul>
+<li>the fields of the widget, which themselves must not change over time,
+and</li>
+<li>any ambient state obtained from the <code>context</code> using
+<a href="https://api.flutter.dev/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html">BuildContext.dependOnInheritedWidgetOfExactType</a>.</li>
+</ul>
+<p>If a widget's <a href="../../screens_settings_screen/SettingsPage/build.html">build</a> method is to depend on anything else, use a
+<a href="https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html">StatefulWidget</a> instead.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html">StatelessWidget</a>, which contains the discussion on performance considerations.</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Widget build(BuildContext context) {
+  final localizations = AppLocalizations.of(context)!;
+  return Scaffold(
+    appBar: AppBar(
+      title: Text(localizations.settings),
+      backgroundColor: Theme.of(context).primaryColor,
+    ),
+    body: Consumer&lt;Settings&gt;(builder: (context, settings, child) {
+      return ListView(
+        children: [
+          TitledColumn(title: Text(localizations.layout), children: [
+            ListTile(
+              key: const Key(&#39;EnterTimeFormatScreen&#39;),
+              title: Text(localizations.enterTimeFormatScreen),
+              subtitle: Text(settings.dateFormatString),
+              leading: const Icon(Icons.schedule),
+              trailing: const Icon(Icons.arrow_forward_ios),
+              onTap: () async {
+                final pickedFormat = await showTimeFormatPickerDialoge(context,
+                    settings.dateFormatString,
+                    settings.bottomAppBars);
+                if (pickedFormat != null) {
+                  settings.dateFormatString = pickedFormat;
+                }
+              },
+            ),
+            DropDownListTile&lt;ThemeMode&gt;(
+              key: const Key(&#39;theme&#39;),
+              leading: const Icon(Icons.brightness_4),
+              title: Text(localizations.theme),
+              value: settings.themeMode,
+              items: [
+                DropdownMenuItem(value: ThemeMode.system, child: Text(localizations.system)),
+                DropdownMenuItem(value: ThemeMode.dark, child: Text(localizations.dark)),
+                DropdownMenuItem(value: ThemeMode.light, child: Text(localizations.light))
+              ],
+              onChanged: (ThemeMode? value) {
+                if (value != null) settings.themeMode = value;
+              },
+            ),
+            ColorSelectionListTile(
+              key: const Key(&#39;accentColor&#39;),
+              onMainColorChanged: (color) =&gt; settings.accentColor = color,
+              initialColor: settings.accentColor,
+              title: Text(localizations.accentColor)),
+            DropDownListTile&lt;Locale?&gt;(
+              key: const Key(&#39;language&#39;),
+              leading: const Icon(Icons.language),
+              title: Text(localizations.language),
+              value: settings.language,
+              items: [
+                DropdownMenuItem(value: null, child: Text(localizations.system)),
+                for (final l in AppLocalizations.supportedLocales)
+                  DropdownMenuItem(value: l, child: Text(getDisplayLanguage(l) ?? l.languageCode)),
+              ],
+              onChanged: (Locale? value) {
+                settings.language = value;
+              },
+            ),
+            SliderListTile(
+              key: const Key(&#39;graphLineThickness&#39;),
+              title: Text(localizations.graphLineThickness),
+              leading: const Icon(Icons.line_weight),
+              onChanged: (double value) {
+                settings.graphLineThickness = value;
+              },
+              value: settings.graphLineThickness,
+              min: 1,
+              max: 5,
+              stepSize: 1,
+            ),
+            SliderListTile(
+              key: const Key(&#39;needlePinBarWidth&#39;),
+              title: Text(localizations.needlePinBarWidth),
+              subtitle: Text(localizations.needlePinBarWidthDesc),
+              leading: const Icon(Icons.line_weight),
+              onChanged: (double value) {
+                settings.needlePinBarWidth = value;
+              },
+              value: settings.needlePinBarWidth,
+              min: 1,
+              max: 20,
+              stepSize: 1,
+            ),
+            SliderListTile(
+              key: const Key(&#39;animationSpeed&#39;),
+              title: Text(localizations.animationSpeed),
+              leading: const Icon(Icons.speed),
+              onChanged: (double value) {
+                settings.animationSpeed = value.toInt();
+              },
+              value: settings.animationSpeed.toDouble(),
+              min: 0,
+              max: 1000,
+              stepSize: 50,
+            ),
+            ColorSelectionListTile(
+              key: const Key(&#39;sysColor&#39;),
+              onMainColorChanged: (color) =&gt; settings.sysColor = color,
+              initialColor: settings.sysColor,
+                title: Text(localizations.sysColor)),
+            ColorSelectionListTile(
+              key: const Key(&#39;diaColor&#39;),
+              onMainColorChanged: (color) =&gt; settings.diaColor = color,
+              initialColor: settings.diaColor,
+              title: Text(localizations.diaColor)),
+            ColorSelectionListTile(
+              key: const Key(&#39;pulColor&#39;),
+              onMainColorChanged: (color) =&gt; settings.pulColor = color,
+              initialColor: settings.pulColor,
+              title: Text(localizations.pulColor)),
+            SwitchListTile(
+              key: const Key(&#39;useLegacyList&#39;),
+              value: settings.useLegacyList,
+              onChanged: (value) {
+                settings.useLegacyList = value;
+              },
+              secondary: const Icon(Icons.list_alt_outlined),
+              title: Text(localizations.useLegacyList),),
+          ]),
+
+          TitledColumn(title: Text(localizations.behavior), children: [
+            SwitchListTile(
+              key: const Key(&#39;allowManualTimeInput&#39;),
+              value: settings.allowManualTimeInput,
+              onChanged: (value) {
+                settings.allowManualTimeInput = value;
+              },
+              secondary: const Icon(Icons.details),
+              title: Text(localizations.allowManualTimeInput)),
+            SwitchListTile(
+              key: const Key(&#39;validateInputs&#39;),
+              value: settings.validateInputs,
+              title: Text(localizations.validateInputs),
+              secondary: const Icon(Icons.edit),
+              onChanged: settings.allowMissingValues ? null : (value) {
+                assert(!settings.allowMissingValues);
+                settings.validateInputs = value;
+              }),
+            SwitchListTile(
+              key: const Key(&#39;allowMissingValues&#39;),
+              value: settings.allowMissingValues,
+              title: Text(localizations.allowMissingValues),
+              secondary: const Icon(Icons.report_off_outlined),
+              onChanged: (value) {
+                settings.allowMissingValues = value;
+                if (value) settings.validateInputs = false;
+              }),
+            SwitchListTile(
+              key: const Key(&#39;confirmDeletion&#39;),
+              value: settings.confirmDeletion,
+              title: Text(localizations.confirmDeletion),
+              secondary: const Icon(Icons.check),
+              onChanged: (value) {
+                settings.confirmDeletion = value;
+              }),
+            NumberInputListTile(
+              key: const Key(&#39;sysWarn&#39;),
+              label: localizations.sysWarn,
+              leading: const Icon(Icons.warning_amber_outlined),
+              value: settings.sysWarn,
+              onParsableSubmit: (double value) {
+                settings.sysWarn = value.round();
+              },
+            ),
+            NumberInputListTile(
+              key: const Key(&#39;diaWarn&#39;),
+              label: localizations.diaWarn,
+              leading: const Icon(Icons.warning_amber_outlined),
+              value: settings.diaWarn,
+              onParsableSubmit: (double value) {
+                settings.diaWarn = value.round();
+              },
+            ),
+            ListTile(
+              key: const Key(&#39;determineWarnValues&#39;),
+              leading: const Icon(Icons.settings_applications_outlined),
+              title: Text(localizations.determineWarnValues),
+              onTap: () async {
+                final age = (await showNumberInputDialoge(context,
+                  hintText: localizations.age,
+                ))?.round();
+                if (age != null) {
+                  settings.sysWarn = BloodPressureWarnValues.getUpperSysWarnValue(age);
+                  settings.diaWarn = BloodPressureWarnValues.getUpperDiaWarnValue(age);
+                }
+              },
+            ),
+            ListTile(
+              key: const Key(&#39;AboutWarnValuesScreen&#39;),
+              title: Text(localizations.aboutWarnValuesScreen),
+              subtitle: Text(localizations.aboutWarnValuesScreenDesc),
+              leading: const Icon(Icons.info_outline),
+              trailing: const Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =&gt; const AboutWarnValuesScreen()),
+                );
+              }
+            ),
+            ListTile(
+              key: const Key(&#39;GraphMarkingsScreen&#39;),
+              title: Text(localizations.customGraphMarkings),
+              leading: const Icon(Icons.legend_toggle_outlined),
+              trailing: const Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =&gt; const GraphMarkingsScreen()),
+                );
+              }
+            ),
+            SwitchListTile(
+              title: Text(localizations.drawRegressionLines),
+              secondary: const Icon(Icons.trending_down_outlined),
+              subtitle: Text(localizations.drawRegressionLinesDesc),
+              value: settings.drawRegressionLines,
+              onChanged: (value) {
+                settings.drawRegressionLines = value;
+              }
+            ),
+            SwitchListTile(
+              title: Text(localizations.startWithAddMeasurementPage),
+              subtitle: Text(localizations.startWithAddMeasurementPageDescription),
+              secondary: const Icon(Icons.electric_bolt_outlined),
+              value: settings.startWithAddMeasurementPage,
+              onChanged: (value) {
+                settings.startWithAddMeasurementPage = value;
+              }
+            ),
+            SwitchListTile(
+                title: Text(localizations.bottomAppBars),
+                secondary: const Icon(Icons.vertical_align_bottom),
+                value: settings.bottomAppBars,
+                onChanged: (value) {
+                  settings.bottomAppBars = value;
+                }
+            ),
+          ]),
+          TitledColumn(
+            title: Text(localizations.data),
+            children: [
+              ListTile(
+                  title: Text(localizations.exportImport),
+                  leading: const Icon(Icons.download),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =&gt; const ExportImportScreen()),
+                    );
+                  }
+              ),
+              ListTile(
+                  title: Text(localizations.exportSettings),
+                  leading: const Icon(Icons.tune),
+                  onTap: () async {
+                    String dbPath = await getDatabasesPath();
+                    assert(dbPath != inMemoryDatabasePath);
+                    dbPath = join(dbPath, &#39;config.db&#39;);
+                    assert(Platform.isAndroid);
+                    PlatformClient.shareFile(dbPath, &#39;application&#47;vnd.sqlite3&#39;);
+                  }
+              ),
+              ListTile(
+                  title: Text(localizations.importSettings),
+                  subtitle: Text(localizations.requiresAppRestart),
+                  leading: const Icon(Icons.settings_backup_restore),
+                  onTap: () async {
+                    final messenger = ScaffoldMessenger.of(context);
+                    var result = await FilePicker.platform.pickFiles(
+                      allowMultiple: false,
+                      withData: false,
+                    );
+                    if (result == null) {
+                      messenger.showSnackBar(SnackBar(content: Text(localizations.errNoFileOpened)));
+                      return;
+                    }
+                    var path = result.files.single.path;
+                    if (path == null) {
+                      messenger.showSnackBar(SnackBar(content: Text(localizations.errCantReadFile)));
+                      return;
+                    }
+
+                    String dbPath = await getDatabasesPath();
+                    assert(dbPath != inMemoryDatabasePath);
+                    dbPath = join(dbPath, &#39;config.db&#39;);
+                    File(path).copySync(dbPath);
+                    if (!await Restart.restartApp()) {
+                      messenger.showSnackBar(SnackBar(content: Text(localizations.pleaseRestart)));
+                      return;
+                    }
+                  }
+              ),
+              ListTile(
+                  title: Text(localizations.delete),
+                  leading: const Icon(Icons.delete),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =&gt; const DeleteDataScreen()),
+                    );
+                  }
+              )
+            ],
+          ),
+          TitledColumn(title: Text(localizations.aboutWarnValuesScreen), children: [
+            ListTile(
+                key: const Key(&#39;version&#39;),
+                title: Text(localizations.version),
+                leading: const Icon(Icons.info_outline),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                subtitle: ConsistentFutureBuilder&lt;PackageInfo&gt;(
+                  future: PackageInfo.fromPlatform(),
+                  cacheFuture: true,
+                  onData: (context, info) =&gt; Text(info.version)
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =&gt; const VersionScreen()),
+                  );
+                }
+            ),
+            ListTile(
+              key: const Key(&#39;sourceCode&#39;),
+              title: Text(localizations.sourceCode),
+              leading: const Icon(Icons.merge),
+              trailing: const Icon(Icons.open_in_new),
+              onTap: () async {
+                final scaffoldMessenger = ScaffoldMessenger.of(context);
+                var url = Uri.parse(&#39;https:&#47;&#47;github.com&#47;NobodyForNothing&#47;blood-pressure-monitor-fl&#39;);
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url, mode: LaunchMode.externalApplication);
+                } else {
+                  scaffoldMessenger.showSnackBar(SnackBar(
+                      content: Text(localizations.errCantOpenURL(url.toString()))));
+                }
+              },
+            ),
+            ListTile(
+              key: const Key(&#39;licenses&#39;),
+              title: Text(localizations.licenses),
+              leading: const Icon(Icons.policy_outlined),
+              trailing: const Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                showLicensePage(context: context);
+              },
+            ),
+          ])
+        ],
+      );
+    }),
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">blood_pressure_app</a></li>
+    <li><a href="../../screens_settings_screen/screens_settings_screen-library.html">settings_screen</a></li>
+    <li><a href="../../screens_settings_screen/SettingsPage-class.html">SettingsPage</a></li>
+    <li class="self-crumb">build method</li>
+</ol>
+
+
+    <h5>SettingsPage class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    blood_pressure_app
+      1.5.8
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

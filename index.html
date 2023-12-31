@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 7.0.1-wip">
+  <meta name="description" content="blood_pressure_app API docs, for the Dart programming language.">
+  <title>blood_pressure_app - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">blood_pressure_app package</li>
+  </ol>
+  <div class="self-name">blood_pressure_app</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <div align="center">  
+  <img src="https://github.com/NobodyForNothing/blood-pressure-monitor-fl/blob/79b8a2d38703a5ff6d491019ba51b0374c39963a/android/app/src/main/res/drawable/icon.png" width="20%" height="20%">
+</div>
+<h1 align="center"> blood pressure monitor </h1>
+<div align="center">
+  <a href="[https://github.com/NobodyForNothing/blood-pressure-monitor-fl/actions/workflows/CI.yml">
+    <img src="https://github.com/NobodyForNothing/blood-pressure-monitor-fl/actions/workflows/CI.yml/badge.svg" alt="CI status">
+  </a>
+  <a href="https://github.com/NobodyForNothing/blood-pressure-monitor-fl/releases/latest">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/NobodyForNothing/blood-pressure-monitor-fl">
+  </a>
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/NobodyForNothing/blood-pressure-monitor-fl">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/NobodyForNothing/blood-pressure-monitor-fl">
+  <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/NobodyForNothing/blood-pressure-monitor-fl">
+  <a href="https://hosted.weblate.org/engage/blood-pressure-monitor-fl/">
+    <img src="https://hosted.weblate.org/widgets/blood-pressure-monitor-fl/-/svg-badge.svg" alt="Translation status">
+  </a>
+</div>
+<div align="center">
+  <a href="https://f-droid.org/en/packages/com.derdilla.bloodPressureApp"><img alt="F-Droid" height="40" src="https://gitlab.com/fdroid/artwork/-/raw/master/fdroid-logo-2015/available-on-fdroid.svg"></a>
+  <a href="https://play.google.com/store/apps/details?id=com.derdilla.bloodPressureApp&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img height="45" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"></a>
+</div>
+<p align="center">
+  A cross-platform app to save and analyze blood pressure values and allows easy data export
+</p>
+<p>Track your blood pressure wherever you go. Offline, ad-free, and open source.
+This application allows you to easily store your records and export all your records to a CSV file.</p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="android">Android</h3>
+<h4 id="play-store">Play Store</h4>
+<p>This app is available in the Google <a href="https://play.google.com/store/apps/details?id=com.derdilla.bloodPressureApp">Play Store</a>.</p>
+<p>Please note that when switching from another installation source, you first need to uninstall the old app before you can get updates. <strong>Making a manual backup is required to avoid data loss.</strong></p>
+<h4 id="fdroid">Fdroid</h4>
+<p>This app is available on <a href="https://f-droid.org/en/packages/com.derdilla.bloodPressureApp/">F-Droid</a>.</p>
+<h4 id="github">GitHub</h4>
+<p>You can download and install the APK directly through the Releases page. Keep in mind that you have to regularly check for new versions manually.</p>
+<h3 id="i-os">I-OS</h3>
+<p>While building an ios app would be no problem code-wise, apple's restrictive behavior makes this more complicated (and expensive). So I won't take this step unless there is significant demand.</p>
+<h3 id="windows-linux-and-macos">Windows, Linux and MacOS</h3>
+<p>This would all be technically possible, but I don't really see a demand. Open an issue if you need them.</p>
+<h2 id="screenshots">Screenshots</h2>
+<table style="width: 100%; border-collapse: collapse;">
+  <tbody><tr>
+    <td><img src="https://github.com/NobodyForNothing/blood-pressure-monitor-fl/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/01-example_add.png?raw=true" height="100%" alt="Home"></td>
+    <td><img src="https://github.com/NobodyForNothing/blood-pressure-monitor-fl/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/03-example_settings.png?raw=true" height="100%" alt="Settings"></td>
+  <td><img src="https://github.com/NobodyForNothing/blood-pressure-monitor-fl/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/02-example_home.png?raw=true" height="100%" alt="Home"></td>
+    <td><img src="https://github.com/NobodyForNothing/blood-pressure-monitor-fl/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/04-example_stats.png?raw=true" height="100%" alt="Statistics"></td>
+  </tr>
+</tbody></table>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions to this project are greatly appreciated and can come in many forms. Please note that when contributing you agree that your work is under the same license as the project.</p>
+<h3 id="opening-bugs-and-proposing-features">Opening bugs and proposing features</h3>
+<p>This is probably the simplest to do: Just use the app and find out what's wrong and what can be improved. There is no such thing as a wrong issue. Just make sure there is no existing one about the exact same topic If you are unsure about something just create a new issue, the worst thing to happen is that it gets closed.</p>
+<h3 id="improving-texts-and-translating">Improving texts and translating</h3>
+<p>Another easy way to help is to go through the texts (this one or the ones in the app) and fix grammar/other mistakes or find better (more precise/friendly) ways to put things.
+The easiest way to do this is <a href="https://hosted.weblate.org/engage/blood-pressure-monitor-fl/">weblate</a>.</p>
+<p><a href="https://hosted.weblate.org/engage/blood-pressure-monitor-fl/"><img src="https://hosted.weblate.org/widgets/blood-pressure-monitor-fl/-/multi-auto.svg" alt="Translation status"></a></p>
+<h3 id="pull-requests">Pull requests</h3>
+<p>If you can code, you can fix issues or implement features from the issues page. While not a strict requirement, it's still probably best, if you talk about it in an issue first.</p>
+<h3 id="donations">Donations</h3>
+<p>If you have too much money, I would advise you to donate to either <a href="https://f-droid.org/en/donate/">F-Droid</a>, <a href="https://weblate.org/en/donate/">Weblate</a>, or some other service that has unavoidable maintenance costs.</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="active_field_customization">
+  <span class="name"><a href="screens_subsettings_export_import_active_field_customization/screens_subsettings_export_import_active_field_customization-library.html">active_field_customization</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="add_export_column_dialoge">
+  <span class="name"><a href="components_dialoges_add_export_column_dialoge/components_dialoges_add_export_column_dialoge-library.html">add_export_column_dialoge</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="add_measurement_dialoge">
+  <span class="name"><a href="components_dialoges_add_measurement_dialoge/components_dialoges_add_measurement_dialoge-library.html">add_measurement_dialoge</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="blood_pressure_analyzer">
+  <span class="name"><a href="model_blood_pressure_analyzer/model_blood_pressure_analyzer-library.html">blood_pressure_analyzer</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="blood_pressure_builder">
+  <span class="name"><a href="screens_elements_blood_pressure_builder/screens_elements_blood_pressure_builder-library.html">blood_pressure_builder</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="color_picker">
+  <span class="name"><a href="components_color_picker/components_color_picker-library.html">color_picker</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="color_picker_list_tile">
+  <span class="name"><a href="components_settings_color_picker_list_tile/components_settings_color_picker_list_tile-library.html">color_picker_list_tile</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="column">
+  <span class="name"><a href="model_export_import_column/model_export_import_column-library.html">column</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="common_settings_interfaces">
+  <span class="name"><a href="model_storage_common_settings_interfaces/model_storage_common_settings_interfaces-library.html">common_settings_interfaces</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="config_dao">
+  <span class="name"><a href="model_storage_db_config_dao/model_storage_db_config_dao-library.html">config_dao</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="config_db">
+  <span class="name"><a href="model_storage_db_config_db/model_storage_db_config_db-library.html">config_db</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="consistent_future_builder">
+  <span class="name"><a href="components_consistent_future_builder/components_consistent_future_builder-library.html">consistent_future_builder</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="convert_util">
+  <span class="name"><a href="model_storage_convert_util/model_storage_convert_util-library.html">convert_util</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="csv_converter">
+  <span class="name"><a href="model_export_import_csv_converter/model_export_import_csv_converter-library.html">csv_converter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="date_time_picker">
+  <span class="name"><a href="components_date_time_picker/components_date_time_picker-library.html">date_time_picker</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="delete_data_screen">
+  <span class="name"><a href="screens_subsettings_delete_data_screen/screens_subsettings_delete_data_screen-library.html">delete_data_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="disabled">
+  <span class="name"><a href="components_disabled/components_disabled-library.html">disabled</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="display_interval_picker">
+  <span class="name"><a href="screens_elements_display_interval_picker/screens_elements_display_interval_picker-library.html">display_interval_picker</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="dropdown_list_tile">
+  <span class="name"><a href="components_settings_dropdown_list_tile/components_settings_dropdown_list_tile-library.html">dropdown_list_tile</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="enter_timeformat_dialoge">
+  <span class="name"><a href="components_dialoges_enter_timeformat_dialoge/components_dialoges_enter_timeformat_dialoge-library.html">enter_timeformat_dialoge</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="error_reporting_screen">
+  <span class="name"><a href="screens_error_reporting_screen/screens_error_reporting_screen-library.html">error_reporting_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="export_button_bar">
+  <span class="name"><a href="screens_subsettings_export_import_export_button_bar/screens_subsettings_export_import_export_button_bar-library.html">export_button_bar</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="export_column_management_screen">
+  <span class="name"><a href="screens_subsettings_export_import_export_column_management_screen/screens_subsettings_export_import_export_column_management_screen-library.html">export_column_management_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="export_columns_store">
+  <span class="name"><a href="model_storage_export_columns_store/model_storage_export_columns_store-library.html">export_columns_store</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="export_configuration">
+  <span class="name"><a href="model_export_import_export_configuration/model_export_import_export_configuration-library.html">export_configuration</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="export_csv_settings_store">
+  <span class="name"><a href="model_storage_export_csv_settings_store/model_storage_export_csv_settings_store-library.html">export_csv_settings_store</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="export_field_format_documentation_screen">
+  <span class="name"><a href="screens_subsettings_export_import_export_field_format_documentation_screen/screens_subsettings_export_import_export_field_format_documentation_screen-library.html">export_field_format_documentation_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="export_import_screen">
+  <span class="name"><a href="screens_subsettings_export_import_export_import_screen/screens_subsettings_export_import_export_import_screen-library.html">export_import_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="export_pdf_settings_store">
+  <span class="name"><a href="model_storage_export_pdf_settings_store/model_storage_export_pdf_settings_store-library.html">export_pdf_settings_store</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="export_settings_store">
+  <span class="name"><a href="model_storage_export_settings_store/model_storage_export_settings_store-library.html">export_settings_store</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="export_warn_banner">
+  <span class="name"><a href="components_export_warn_banner/components_export_warn_banner-library.html">export_warn_banner</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="fullscreen_dialoge">
+  <span class="name"><a href="components_dialoges_fullscreen_dialoge/components_dialoges_fullscreen_dialoge-library.html">fullscreen_dialoge</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="graph_markings_screen">
+  <span class="name"><a href="screens_subsettings_graph_markings_screen/screens_subsettings_graph_markings_screen-library.html">graph_markings_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="home_screen">
+  <span class="name"><a href="screens_home_screen/screens_home_screen-library.html">home_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="horizontal_graph_line">
+  <span class="name"><a href="model_horizontal_graph_line/model_horizontal_graph_line-library.html">horizontal_graph_line</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="import_field_type">
+  <span class="name"><a href="model_export_import_import_field_type/model_export_import_import_field_type-library.html">import_field_type</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="input_dialoge">
+  <span class="name"><a href="components_dialoges_input_dialoge/components_dialoges_input_dialoge-library.html">input_dialoge</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="input_list_tile">
+  <span class="name"><a href="components_settings_input_list_tile/components_settings_input_list_tile-library.html">input_list_tile</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="intervall_store">
+  <span class="name"><a href="model_storage_intervall_store/model_storage_intervall_store-library.html">intervall_store</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="iso_lang_names">
+  <span class="name"><a href="model_iso_lang_names/model_iso_lang_names-library.html">iso_lang_names</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="legacy_measurement_list">
+  <span class="name"><a href="screens_elements_legacy_measurement_list/screens_elements_legacy_measurement_list-library.html">legacy_measurement_list</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="loading_screen">
+  <span class="name"><a href="screens_loading_screen/screens_loading_screen-library.html">loading_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="main">
+  <span class="name"><a href="main/main-library.html">main</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="measurement_graph">
+  <span class="name"><a href="screens_elements_measurement_graph/screens_elements_measurement_graph-library.html">measurement_graph</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="measurement_list">
+  <span class="name"><a href="components_measurement_list_measurement_list/components_measurement_list_measurement_list-library.html">measurement_list</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="measurement_list_entry">
+  <span class="name"><a href="components_measurement_list_measurement_list_entry/components_measurement_list_measurement_list_entry-library.html">measurement_list_entry</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="model">
+  <span class="name"><a href="model_blood_pressure_model/model_blood_pressure_model-library.html">model</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="needle_pin">
+  <span class="name"><a href="model_blood_pressure_needle_pin/model_blood_pressure_needle_pin-library.html">needle_pin</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="number_input_list_tile">
+  <span class="name"><a href="components_settings_number_input_list_tile/components_settings_number_input_list_tile-library.html">number_input_list_tile</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="pdf_converter">
+  <span class="name"><a href="model_export_import_pdf_converter/model_export_import_pdf_converter-library.html">pdf_converter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="platform_client">
+  <span class="name"><a href="platform_integration_platform_client/platform_integration_platform_client-library.html">platform_client</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="record">
+  <span class="name"><a href="model_blood_pressure_record/model_blood_pressure_record-library.html">record</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="record_formatter">
+  <span class="name"><a href="model_export_import_record_formatter/model_export_import_record_formatter-library.html">record_formatter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="record_parsing_result">
+  <span class="name"><a href="model_export_import_record_parsing_result/model_export_import_record_parsing_result-library.html">record_parsing_result</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="settings_screen">
+  <span class="name"><a href="screens_settings_screen/screens_settings_screen-library.html">settings_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="settings_store">
+  <span class="name"><a href="model_storage_settings_store/model_storage_settings_store-library.html">settings_store</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="settings_widgets">
+  <span class="name"><a href="settings_widgets/settings_widgets-library.html">settings_widgets</a></span> 
+
+</dt>
+<dd>Widgets related to organizing input fields in list like structures.
+</dd>
+
+          <dt id="slider_list_tile">
+  <span class="name"><a href="components_settings_slider_list_tile/components_settings_slider_list_tile-library.html">slider_list_tile</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="statistics_screen">
+  <span class="name"><a href="screens_statistics_screen/screens_statistics_screen-library.html">statistics_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="storage">
+  <span class="name"><a href="storage/storage-library.html">storage</a></span> 
+
+</dt>
+<dd>Persistently stored information that is not a measurement.
+</dd>
+
+          <dt id="time_formats_reference_screen">
+  <span class="name"><a href="screens_subsettings_time_formats_reference_screen/screens_subsettings_time_formats_reference_screen-library.html">time_formats_reference_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="titled_column">
+  <span class="name"><a href="components_settings_titled_column/components_settings_titled_column-library.html">titled_column</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="update_legacy_settings">
+  <span class="name"><a href="model_storage_update_legacy_settings/model_storage_update_legacy_settings-library.html">update_legacy_settings</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="version_screen">
+  <span class="name"><a href="screens_subsettings_version_screen/screens_subsettings_version_screen-library.html">version_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="warn_about_screen">
+  <span class="name"><a href="screens_subsettings_warn_about_screen/screens_subsettings_warn_about_screen-library.html">warn_about_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="warn_values">
+  <span class="name"><a href="model_blood_pressure_warn_values/model_blood_pressure_warn_values-library.html">warn_values</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">blood_pressure_app package</li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">blood_pressure_app</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="screens_subsettings_export_import_active_field_customization/screens_subsettings_export_import_active_field_customization-library.html">active_field_customization</a></li>
+      <li><a href="components_dialoges_add_export_column_dialoge/components_dialoges_add_export_column_dialoge-library.html">add_export_column_dialoge</a></li>
+      <li><a href="components_dialoges_add_measurement_dialoge/components_dialoges_add_measurement_dialoge-library.html">add_measurement_dialoge</a></li>
+      <li><a href="model_blood_pressure_analyzer/model_blood_pressure_analyzer-library.html">blood_pressure_analyzer</a></li>
+      <li><a href="screens_elements_blood_pressure_builder/screens_elements_blood_pressure_builder-library.html">blood_pressure_builder</a></li>
+      <li><a href="components_color_picker/components_color_picker-library.html">color_picker</a></li>
+      <li><a href="components_settings_color_picker_list_tile/components_settings_color_picker_list_tile-library.html">color_picker_list_tile</a></li>
+      <li><a href="model_export_import_column/model_export_import_column-library.html">column</a></li>
+      <li><a href="model_storage_common_settings_interfaces/model_storage_common_settings_interfaces-library.html">common_settings_interfaces</a></li>
+      <li><a href="model_storage_db_config_dao/model_storage_db_config_dao-library.html">config_dao</a></li>
+      <li><a href="model_storage_db_config_db/model_storage_db_config_db-library.html">config_db</a></li>
+      <li><a href="components_consistent_future_builder/components_consistent_future_builder-library.html">consistent_future_builder</a></li>
+      <li><a href="model_storage_convert_util/model_storage_convert_util-library.html">convert_util</a></li>
+      <li><a href="model_export_import_csv_converter/model_export_import_csv_converter-library.html">csv_converter</a></li>
+      <li><a href="components_date_time_picker/components_date_time_picker-library.html">date_time_picker</a></li>
+      <li><a href="screens_subsettings_delete_data_screen/screens_subsettings_delete_data_screen-library.html">delete_data_screen</a></li>
+      <li><a href="components_disabled/components_disabled-library.html">disabled</a></li>
+      <li><a href="screens_elements_display_interval_picker/screens_elements_display_interval_picker-library.html">display_interval_picker</a></li>
+      <li><a href="components_settings_dropdown_list_tile/components_settings_dropdown_list_tile-library.html">dropdown_list_tile</a></li>
+      <li><a href="components_dialoges_enter_timeformat_dialoge/components_dialoges_enter_timeformat_dialoge-library.html">enter_timeformat_dialoge</a></li>
+      <li><a href="screens_error_reporting_screen/screens_error_reporting_screen-library.html">error_reporting_screen</a></li>
+      <li><a href="screens_subsettings_export_import_export_button_bar/screens_subsettings_export_import_export_button_bar-library.html">export_button_bar</a></li>
+      <li><a href="screens_subsettings_export_import_export_column_management_screen/screens_subsettings_export_import_export_column_management_screen-library.html">export_column_management_screen</a></li>
+      <li><a href="model_storage_export_columns_store/model_storage_export_columns_store-library.html">export_columns_store</a></li>
+      <li><a href="model_export_import_export_configuration/model_export_import_export_configuration-library.html">export_configuration</a></li>
+      <li><a href="model_storage_export_csv_settings_store/model_storage_export_csv_settings_store-library.html">export_csv_settings_store</a></li>
+      <li><a href="screens_subsettings_export_import_export_field_format_documentation_screen/screens_subsettings_export_import_export_field_format_documentation_screen-library.html">export_field_format_documentation_screen</a></li>
+      <li><a href="screens_subsettings_export_import_export_import_screen/screens_subsettings_export_import_export_import_screen-library.html">export_import_screen</a></li>
+      <li><a href="model_storage_export_pdf_settings_store/model_storage_export_pdf_settings_store-library.html">export_pdf_settings_store</a></li>
+      <li><a href="model_storage_export_settings_store/model_storage_export_settings_store-library.html">export_settings_store</a></li>
+      <li><a href="components_export_warn_banner/components_export_warn_banner-library.html">export_warn_banner</a></li>
+      <li><a href="components_dialoges_fullscreen_dialoge/components_dialoges_fullscreen_dialoge-library.html">fullscreen_dialoge</a></li>
+      <li><a href="screens_subsettings_graph_markings_screen/screens_subsettings_graph_markings_screen-library.html">graph_markings_screen</a></li>
+      <li><a href="screens_home_screen/screens_home_screen-library.html">home_screen</a></li>
+      <li><a href="model_horizontal_graph_line/model_horizontal_graph_line-library.html">horizontal_graph_line</a></li>
+      <li><a href="model_export_import_import_field_type/model_export_import_import_field_type-library.html">import_field_type</a></li>
+      <li><a href="components_dialoges_input_dialoge/components_dialoges_input_dialoge-library.html">input_dialoge</a></li>
+      <li><a href="components_settings_input_list_tile/components_settings_input_list_tile-library.html">input_list_tile</a></li>
+      <li><a href="model_storage_intervall_store/model_storage_intervall_store-library.html">intervall_store</a></li>
+      <li><a href="model_iso_lang_names/model_iso_lang_names-library.html">iso_lang_names</a></li>
+      <li><a href="screens_elements_legacy_measurement_list/screens_elements_legacy_measurement_list-library.html">legacy_measurement_list</a></li>
+      <li><a href="screens_loading_screen/screens_loading_screen-library.html">loading_screen</a></li>
+      <li><a href="main/main-library.html">main</a></li>
+      <li><a href="screens_elements_measurement_graph/screens_elements_measurement_graph-library.html">measurement_graph</a></li>
+      <li><a href="components_measurement_list_measurement_list/components_measurement_list_measurement_list-library.html">measurement_list</a></li>
+      <li><a href="components_measurement_list_measurement_list_entry/components_measurement_list_measurement_list_entry-library.html">measurement_list_entry</a></li>
+      <li><a href="model_blood_pressure_model/model_blood_pressure_model-library.html">model</a></li>
+      <li><a href="model_blood_pressure_needle_pin/model_blood_pressure_needle_pin-library.html">needle_pin</a></li>
+      <li><a href="components_settings_number_input_list_tile/components_settings_number_input_list_tile-library.html">number_input_list_tile</a></li>
+      <li><a href="model_export_import_pdf_converter/model_export_import_pdf_converter-library.html">pdf_converter</a></li>
+      <li><a href="platform_integration_platform_client/platform_integration_platform_client-library.html">platform_client</a></li>
+      <li><a href="model_blood_pressure_record/model_blood_pressure_record-library.html">record</a></li>
+      <li><a href="model_export_import_record_formatter/model_export_import_record_formatter-library.html">record_formatter</a></li>
+      <li><a href="model_export_import_record_parsing_result/model_export_import_record_parsing_result-library.html">record_parsing_result</a></li>
+      <li><a href="screens_settings_screen/screens_settings_screen-library.html">settings_screen</a></li>
+      <li><a href="model_storage_settings_store/model_storage_settings_store-library.html">settings_store</a></li>
+      <li><a href="settings_widgets/settings_widgets-library.html">settings_widgets</a></li>
+      <li><a href="components_settings_slider_list_tile/components_settings_slider_list_tile-library.html">slider_list_tile</a></li>
+      <li><a href="screens_statistics_screen/screens_statistics_screen-library.html">statistics_screen</a></li>
+      <li><a href="storage/storage-library.html">storage</a></li>
+      <li><a href="screens_subsettings_time_formats_reference_screen/screens_subsettings_time_formats_reference_screen-library.html">time_formats_reference_screen</a></li>
+      <li><a href="components_settings_titled_column/components_settings_titled_column-library.html">titled_column</a></li>
+      <li><a href="model_storage_update_legacy_settings/model_storage_update_legacy_settings-library.html">update_legacy_settings</a></li>
+      <li><a href="screens_subsettings_version_screen/screens_subsettings_version_screen-library.html">version_screen</a></li>
+      <li><a href="screens_subsettings_warn_about_screen/screens_subsettings_warn_about_screen-library.html">warn_about_screen</a></li>
+      <li><a href="model_blood_pressure_warn_values/model_blood_pressure_warn_values-library.html">warn_values</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    blood_pressure_app
+      1.5.8
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
