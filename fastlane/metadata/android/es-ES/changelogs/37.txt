@@ -1,5 +1,5 @@
-* Fix PDF statistics generation
-* Fix compact list edit and delete
-* Fix duplicate entries on import
-* Internal bug fixes
-* Add Estonian translation
+* Corregir la generación de estadísticas en PDF
+* Corregir la edición y eliminación de listas compactas
+* Corregir entradas duplicadas al importar
+* Corrección de errores internos
+* Añadir traducción al estonio
