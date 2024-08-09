@@ -1,0 +1,5 @@
+* Fix PDF statistics generation
+* Fix compact list edit and delete
+* Fix duplicate entries on import
+* Internal bug fixes
+* Add Estonian translation

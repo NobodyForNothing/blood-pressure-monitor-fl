@@ -1,0 +1,5 @@
+* Corregir la generación de estadísticas en PDF
+* Corregir la edición y eliminación de listas compactas
+* Corregir entradas duplicadas al importar
+* Corrección de errores internos
+* Añadir traducción al estonio
